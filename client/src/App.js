@@ -13,8 +13,21 @@ import Loginpage from './pages/Loginpage';
 import DefaultLayout from './components/DefaultLayout';
 import Register from './pages/Register';
 import Login from './pages/Login';
+const Pool = require("pg").Pool;
+
+
 
 function App() {
+  
+  const pool = new Pool({
+    user: "postgres",
+    password: "password123",
+    host: "database-1.cnuz8nadorxl.ap-south-1.rds.amazonaws.com",
+    port: 5432,
+    database: "database-1", 
+});
+
+module.exports = pool;
 
   return (
 
